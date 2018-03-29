@@ -61,6 +61,26 @@
       }
       
       ReactDOM.render(<App />, mountNode);
+
+
+      
     </script>
+    
+    <h3>simple component </h3>
+    <script>
+    //
+    const Card = (props) => {
+      return(
+        <div>
+          <img src="http://placehold.it/75" />
+          <div>
+            <div>Name here...</div>
+            <div>Company name here ...</div>
+          </div>
+        </div>
+        );
+    };
+    //to test use
+    ReactDOM.render(<Card />, mountNode);</script>
 </body>
 </html>
