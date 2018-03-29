@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Button components</h3>
+    <script>
+    class Button extends React.Component{
+  
+        handleClick = () => {
+            this.props.onClickFunction(this.props.incrementValue);
+        };
+        
+          render(){
+            return(
+              <button onClick={this.handleClick}>
+            +{this.props.incrementValue}
+            
+            </button>
+          );
+        }
+      }
+      
+      
+      
+      const Result = (props) => {
+       return (
+               <div>{props.counter}</div>
+       );
+      }
+      
+      
+      class App extends React.Component {
+          state={ counter: 0 };
+        
+        incrementCounter = (incrementValue) => {
+            this.setState((prevState) => ({
+              counter: prevState.counter + incrementValue
+          }));
+        };
+      
+          render(){
+            return(
+              <div>
+                <Button incrementValue={1}
+              onClickFunction = {this.incrementCounter} />
+              <Button incrementValue={5}
+              onClickFunction = {this.incrementCounter} />
+              <Button incrementValue={10}
+              onClickFunction = {this.incrementCounter} />
+              <Button incrementValue={100}
+              onClickFunction = {this.incrementCounter} />
+              <Result counter={this.state.counter} />
+              </div>
+          );
+        }
+      }
+      
+      ReactDOM.render(<App />, mountNode);
+    </script>
+</body>
+</html>
