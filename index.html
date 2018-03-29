@@ -114,5 +114,71 @@
 
   ReactDOM.render(<CardList cards={data} />, mountNode);
 </script>
+
+
+
+<h3>Submit</h3>
+<script>
+  const Card = (props) => {
+	return(
+  	<div style={{display: 'inline-block', margin:20}}>
+    	<img width="100" src={props.avatar_url} />
+    	<div style={{display: 'inline-block', marginLeft:10}}>
+      	<div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
+        <div>{props.company}</div>
+      </div>
+    </div>
+    );
+};
+
+
+const CardList = (props) => {
+	return (
+  	<div>
+    	{props.cards.map(card => <Card {...card} />)}
+    </div>
+  );
+}
+
+
+class Form extends React.Component {
+	handleSubmit = (event) => {
+  	event.preventDefault();
+    console.log('Event: Form Submit', this.userNameInput.value);
+  };
+	render() {
+  	return (
+    	<form onSubmit={this.handleSubmit}>
+      	<input type="text" 
+        	ref={(input) => this.userNameInput =input}
+          placeholder="Github username" />
+        <button type="submit">Add card</button>
+      </form>
+      );
+  }
+}
+
+class App extends React.Component {
+
+	state = {
+  cards: [
+	{name: "Maia Donoga",
+      	avatar_url: "https://avatars0.githubusercontent.com/u/28684401?v=4",
+        company: "IGoMoon"}
+]
+
+  }
+	render() {
+  	return(
+    	<div>
+      	<Form />
+        <CardList cards={this.state.cards} />
+      </div>
+    );
+  }
+}
+ReactDOM.render(<App />, mountNode);
+
+</script>
 </body>
 </html>
