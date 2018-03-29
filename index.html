@@ -62,10 +62,9 @@
       
       ReactDOM.render(<App />, mountNode);
 
-
-      
     </script>
-    
+
+
     <h3>simple component </h3>
     <script>
     //
@@ -82,5 +81,38 @@
     };
     //to test use
     ReactDOM.render(<Card />, mountNode);</script>
+
+
+    <h3>User cards</h3>
+
+    <script>
+    const Card = (props) => {
+    return(
+      <div>
+        <img width="100" src={props.avatar_url} />
+        <div style={{display: 'inline-block', marginLeft:10}}>
+          <div style={{fontSize: '1.25em', fontWeight: 'bold'}}>{props.name}</div>
+          <div>{props.company}</div>
+        </div>
+      </div>
+        );
+    };
+
+    let data = [
+      {name: "Maia Donoga",
+            avatar_url: "https://avatars0.githubusercontent.com/u/28684401?v=4",
+            company: "IGoMoon"}
+    ];
+
+    const CardList = (props) => {
+      return (
+        <div>
+          {props.cards.map(card => <Card {...card} />)}
+        </div>
+      );
+    }
+
+  ReactDOM.render(<CardList cards={data} />, mountNode);
+</script>
 </body>
 </html>
