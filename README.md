@@ -1,16 +1,16 @@
-# Components
+![Markdown logo](https://img.shields.io/badge/React-exercise-brightgreen.svg)
 
-## Props
+### Props
 
-## State
+### State
 
-# React component composition cheatsheet
+## React component composition cheatsheet
 
 This is a small list of common techniques used in React
 to compose and enhance components. Feel free to create
 Pull Requests with further techniques or fixes.
 
-### Basic containment
+#### Basic containment
 
 Elements can be passed as children into components.
 
@@ -32,7 +32,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### Containment with multiple slots using children
+#### Containment with multiple slots using children
 
 Children are not limited to being elements. You can pass basically anything,
 including plain objects.
@@ -105,7 +105,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### Enhancing contained elements
+#### Enhancing contained elements
 
 It's possible to enhance certain elements with additional props using
 `React.cloneElement`.
@@ -128,7 +128,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### Passing components as props
+#### Passing components as props
 
 Like elements, you can also pass components in using props.
 
@@ -154,7 +154,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### Higher Order Components (HOC)
+#### Higher Order Components (HOC)
 
 Higher Order Components are functions which get a component passed in as argument and
 return a new component.
@@ -179,7 +179,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### Using functions as children
+#### Using functions as children
 
 Since children can be anything, they can also be functions.
 
@@ -225,7 +225,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### When should I use each?
+#### When should I use each?
 
 |   Class Component                 |   Stateless Component      |
 |:----------------------:           |:-----------------:         |
@@ -234,7 +234,7 @@ ReactDOM.render(
 | Lifecycle methods                 |                            |
 | Child functions (for performance) |                            |
 
-### When to use?
+#### When to use?
 
 |   Container Component(Smart, Stateful, Controller View)   |   Presentation Component(Dumb, Stateless, View)      |
 |:---------------------------------------------------------:|:----------------------------------------------------:|
@@ -252,7 +252,7 @@ ReactDOM.render(
 >some container components.”
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; *~Dan Abramov*
 
-### State management
+#### State management
 
 |   Flux                                                    |                       Redux                          |
 |:---------------------------------------------------------:|:----------------------------------------------------:|
@@ -263,12 +263,12 @@ ReactDOM.render(
 | React components subscribe to stores                      |Container components utilize connect                  |
 | State is mutated                                          |State is immutable                                    |
 
-### 3 Principles of Redux
+#### 3 Principles of Redux
 - Immutable Store
 - Actions trigger changes
 - Reducers return updated state
 
-### Handling Immutable State
+#### Handling Immutable State
 
 |   ES6          |     ES5       |   Libraries        |
 |:--------------:|:-------------:|:------------------:|
