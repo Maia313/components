@@ -1,4 +1,4 @@
-![Markdown logo](https://img.shields.io/badge/React-exercise-brightgreen.svg)
+![React](https://img.shields.io/badge/React-exercise-brightgreen.svg)
 
 ### Props
 
