@@ -69,7 +69,7 @@ ReactDOM.render(
 , containerEl);
 ```
 
-### Containment with multiple slots using props
+#### Containment with multiple slots using props
 
 Elements can also be passed in using props.
 
