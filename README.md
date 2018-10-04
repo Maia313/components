@@ -7,9 +7,7 @@
 ## React component composition cheatsheet
 
 This is a small list of common techniques used in React
-to compose and enhance components. Feel free to create
-Pull Requests with further techniques or fixes.
-
+to compose and enhance components.
 #### Basic containment
 
 Elements can be passed as children into components.
